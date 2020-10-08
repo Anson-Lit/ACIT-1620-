@@ -1,3 +1,12 @@
 body {
-    background-color:beige;
+    background-color: beige;
+}
+
+.navigation {
+    background-color: lightblue;
+    text-align: center;
+}
+
+.Montserrat {
+    font-family: 'Montserrat', sans-serif;
 }
