@@ -8,12 +8,24 @@ body {
 }
 
 .navigation a {
-    margin-right: 1em;
-    margin-left: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+.div-line {
+    padding-bottom: 1em;
+    border-bottom: 2px solid grey;
 }
 
 .myheading {
     font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and (min-width: 600px) {}
+@media screen and (min-width: 600px) {
+    body {}
+}
