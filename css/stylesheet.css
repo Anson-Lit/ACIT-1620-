@@ -7,6 +7,13 @@ body {
     text-align: center;
 }
 
+.navigation a {
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
 .myheading {
     font-family: 'Montserrat', sans-serif;
 }
+
+@media screen and (min-width: 600px) {}
