@@ -2,19 +2,22 @@ body {
     background-color: beige;
 }
 
-.navigation {
+
+/* .navigation {
     background-color: lightblue;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 }
 
 .navigation a {
+    grid-column: 2/3;
+} */
+
+.navigation a {
+    background-color: lightblue;
     display: flex;
     justify-content: center;
-}
-
-article {
-    display: flex;
-    flex-direction: column;
 }
 
 .div-line {
@@ -27,5 +30,7 @@ article {
 }
 
 @media screen and (min-width: 600px) {
-    body {}
+    body {
+        background-color: pink;
+    }
 }
