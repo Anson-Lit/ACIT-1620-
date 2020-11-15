@@ -7,8 +7,22 @@ const courseList = [
 do {
     user_input = prompt("Enter a 4 digit code")
 } while (user_input.length !== 4 || isNaN(Number(user_input)));
-// for (let x = 0; x < courseList.length; x++) {
-//     if (user_input === courseList[x].code) {
-//         console.log("hello")
-//     }
-// }
+
+let temp = { code: null, name: null }
+let counter = 0;
+for (let item of courseList) {
+    if (item.code.includes(user_input) === true) {
+        console.log(`Yes I am taking the course: ${item.code} - ${item.name}`)
+    } else {
+        counter += 1
+    }
+}
+if (counter === courseList.length) {
+    do {
+        second_input = prompt("Enter a new 4 digit code")
+    } while (second_input.length !== 4 || isNaN(Number(user_input)));
+    temp.code = second_input
+    courseList.push(temp)
+}
+
+console.log(courseList)
