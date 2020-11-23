@@ -1,27 +1,23 @@
-const courseList = [
-    { code: "ACIT 1620", name: "Web Fundamental Technologies" },
-    { code: "ORGB 1100", name: "Organizational Behaviour" },
-    { code: "ACIT 1515", name: "Scripting for IT" },
-]
+let course_array = createCourseArray()
 
-do {
-    user_input = prompt("Enter a 4 digit code")
-} while (user_input.length !== 4 || isNaN(Number(user_input)));
+function createCourseArray() {
+    let listItems = document.querySelectorAll(".container a");
+    let x = document.querySelectorAll(".Date");
+    let count = 0;
 
-let temp = { code: null, name: null }
-let check = true;
-
-for (let item of courseList) {
-    if (item.code.includes(user_input) === true) {
-        console.log(`Yes I am taking the course: ${item.code} - ${item.name}`)
-        check = false;
-        break;
+    date_array = []
+    for (item of x) {
+        date_array.push(item.innerHTML)
     }
-}
-if (check) {
-    temp.code = user_input
-    courseList.push(temp)
-}
+    newArray = []
 
+    for (let item of listItems) {
+        tempObject = { code: null, date: null }
+        tempObject.code = item.innerHTML
+        tempObject.date = date_array[count]
+        count++
 
-console.log(courseList)
+        newArray.push(tempObject)
+    }
+    return (newArray)
+}
