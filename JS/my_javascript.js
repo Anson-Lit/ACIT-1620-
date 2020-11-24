@@ -1,20 +1,10 @@
 function createCourseArray() {
-    let listItems = document.querySelectorAll(".container a")
-    let x = document.querySelectorAll(".Date")
-    let count = 0
-
-    date_array = []
-    for (item of x) {
-        date_array.push(item.innerHTML)
-    }
+    let listItems = document.querySelectorAll(".container")
     newArray = []
-
-    for (let item of listItems) {
+    for (item of listItems) {
         tempObject = { code: null, date: null }
-        tempObject.code = item.innerHTML
-        tempObject.date = date_array[count]
-        count++
-
+        tempObject.code = (item.querySelector("a").innerHTML)
+        tempObject.date = (item.querySelector(".Date").innerHTML)
         newArray.push(tempObject)
     }
     return (newArray)
