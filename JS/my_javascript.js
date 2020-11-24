@@ -1,9 +1,7 @@
-let course_array = createCourseArray()
-
 function createCourseArray() {
-    let listItems = document.querySelectorAll(".container a");
-    let x = document.querySelectorAll(".Date");
-    let count = 0;
+    let listItems = document.querySelectorAll(".container a")
+    let x = document.querySelectorAll(".Date")
+    let count = 0
 
     date_array = []
     for (item of x) {
@@ -21,3 +19,30 @@ function createCourseArray() {
     }
     return (newArray)
 }
+
+
+function findCourse(courseList) {
+    do {
+        user_input = prompt("Enter a 4 digit code")
+    } while (user_input.length !== 4 || isNaN(Number(user_input)))
+
+    let listItems = document.querySelectorAll(".container a")
+    check = true
+    for (item of listItems) {
+        if (item.innerHTML.includes(user_input)) {
+            item.style.backgroundColor = "green"
+            check = false
+        }
+    }
+    if (check) {
+        let para = document.createElement("p")
+        let text = document.createTextNode(`Course code: ${user_input} N/A Fall 2020`)
+        para.appendChild(text)
+        document.body.appendChild(para)
+    }
+}
+
+
+let course_array = createCourseArray()
+
+findCourse(course_array)
